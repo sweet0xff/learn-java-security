@@ -1,4 +1,4 @@
-package com.sweet.reflect.demo;
+package com.sweet.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

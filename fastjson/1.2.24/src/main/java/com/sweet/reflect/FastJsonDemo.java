@@ -1,4 +1,4 @@
-package com.sweet.reflect.demo;
+package com.sweet.reflect;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
