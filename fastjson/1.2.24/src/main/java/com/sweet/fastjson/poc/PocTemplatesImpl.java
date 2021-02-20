@@ -1,4 +1,4 @@
-package com.sweet;
+package com.sweet.fastjson.poc;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;

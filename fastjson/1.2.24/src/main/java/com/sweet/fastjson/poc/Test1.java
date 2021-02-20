@@ -1,4 +1,4 @@
-package com.sweet;
+package com.sweet.fastjson.poc;
 
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
 import com.sun.org.apache.xalan.internal.xsltc.TransletException;
