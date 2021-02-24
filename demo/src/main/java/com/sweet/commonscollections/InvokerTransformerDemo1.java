@@ -7,7 +7,7 @@ import org.apache.commons.collections.functors.InvokerTransformer;
  * @description
  * @date 2021/2/20 14:25
  */
-public class InvokerTransformerDemo {
+public class InvokerTransformerDemo1 {
     public static void main(String[] args) throws Exception {
         String methodName = "exec";
         Class[] paramType = new Class[]{String.class};
