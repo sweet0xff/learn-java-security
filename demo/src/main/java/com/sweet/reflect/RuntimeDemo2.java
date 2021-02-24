@@ -10,8 +10,11 @@ import java.lang.reflect.Method;
 public class RuntimeDemo2 {
     public static void main(String[] args) throws Exception {
         Class clazz = Runtime.class;
-        Method getRuntimeMethod = clazz.getMethod("getRuntime");
-        Object object = getRuntimeMethod.invoke(null);
+        Method getRuntimeMethod = clazz.getMethod("getRuntime", null);
+//        Object object = getRuntimeMethod.invoke(clazz, new Object[0]);
+//        Object object = getRuntimeMethod.invoke(null, new Class[0]);
+//        Object object = getRuntimeMethod.invoke(clazz, new Class[0]);
+        Object object = getRuntimeMethod.invoke(null, null);
         ((Runtime)object).exec("open -a Calculator");
     }
 }

